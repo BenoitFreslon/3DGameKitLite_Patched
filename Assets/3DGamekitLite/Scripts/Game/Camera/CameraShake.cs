@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+
 
 namespace Gamekit3D
 {
@@ -15,13 +15,13 @@ namespace Gamekit3D
         protected float m_ShakeAmount;
         protected float m_RemainingShakeTime;
 
-        protected CinemachineVirtualCameraBase m_CinemachineVCam;
+        protected Unity.Cinemachine.CinemachineVirtualCameraBase m_CinemachineVCam;
         protected bool m_IsShaking = false;
         protected Vector3 m_OriginalLocalPosition;
 
         private void Awake()
         {
-            m_CinemachineVCam = GetComponent<CinemachineVirtualCameraBase>();
+            m_CinemachineVCam = GetComponent<Unity.Cinemachine.CinemachineVirtualCameraBase>();
         }
 
         private void OnEnable()

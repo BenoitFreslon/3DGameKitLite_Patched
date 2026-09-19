@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Gamekit3D.Message;
 using System.Collections;
-using UnityEngine.XR.WSA;
 
 namespace Gamekit3D
 {

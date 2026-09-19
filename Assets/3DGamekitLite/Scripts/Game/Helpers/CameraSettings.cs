@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Cinemachine;
+
 using UnityEngine;
 
 namespace Gamekit3D
@@ -23,14 +23,14 @@ namespace Gamekit3D
 
         public Transform follow;
         public Transform lookAt;
-        public CinemachineFreeLook keyboardAndMouseCamera;
-        public CinemachineFreeLook controllerCamera;
+        public Unity.Cinemachine.CinemachineFreeLook keyboardAndMouseCamera;
+        public Unity.Cinemachine.CinemachineFreeLook controllerCamera;
         public InputChoice inputChoice;
         public InvertSettings keyboardAndMouseInvertSettings;
         public InvertSettings controllerInvertSettings;
         public bool allowRuntimeCameraSettingsChanges;
 
-        public CinemachineFreeLook Current
+        public Unity.Cinemachine.CinemachineFreeLook Current
         {
             get { return inputChoice == InputChoice.KeyboardAndMouse ? keyboardAndMouseCamera : controllerCamera; }
         }
@@ -39,11 +39,11 @@ namespace Gamekit3D
         {
             Transform keyboardAndMouseCameraTransform = transform.Find("KeyboardAndMouseFreeLookRig");
             if (keyboardAndMouseCameraTransform != null)
-                keyboardAndMouseCamera = keyboardAndMouseCameraTransform.GetComponent<CinemachineFreeLook>();
+                keyboardAndMouseCamera = keyboardAndMouseCameraTransform.GetComponent<Unity.Cinemachine.CinemachineFreeLook>();
 
             Transform controllerCameraTransform = transform.Find("ControllerFreeLookRig");
             if (controllerCameraTransform != null)
-                controllerCamera = controllerCameraTransform.GetComponent<CinemachineFreeLook>();
+                controllerCamera = controllerCameraTransform.GetComponent<Unity.Cinemachine.CinemachineFreeLook>();
 
             PlayerController playerController = FindObjectOfType<PlayerController>();
             if (playerController != null && playerController.name == "Ellen")
@@ -97,7 +97,7 @@ namespace Gamekit3D
 
             Vector2 cameraInput = PlayerInput.Instance.CameraInput;
             
-            CinemachineFreeLook currentCam = Current;
+            Unity.Cinemachine.CinemachineFreeLook currentCam = Current;
             if (currentCam != null)
             {
                 // Appliquer l'input avec la sensibilité déjà intégrée

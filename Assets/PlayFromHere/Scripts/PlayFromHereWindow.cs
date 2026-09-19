@@ -13,7 +13,7 @@ namespace LightShaft.PFH
         public static void ShowWindow()
         {
             PlayFromHereConfig config = Resources.Load("Config/PFH_Config") as PlayFromHereConfig;
-            AssetDatabase.OpenAsset(config.GetInstanceID());
+            AssetDatabase.OpenAsset(config);
         }
     }
 }
