@@ -6,7 +6,7 @@ using Gamekit3D.GameCommands;
 public class PlayCutscene : GameCommandHandler
 {
     [Header("Cutscene Settings")]
-    public Unity.Cinemachine.CinemachineVirtualCamera virtualCamera;
+    public Unity.Cinemachine.CinemachineCamera virtualCamera;
     public float cutsceneDuration = 3f;
     public int highPriority = 20;
 
@@ -18,7 +18,7 @@ public class PlayCutscene : GameCommandHandler
 
         // ⚠ EXACTEMENT comme SimpleTransformer : tout faire au Awake APRES base.Awake()
         if (virtualCamera == null)
-            virtualCamera = GetComponent<Unity.Cinemachine.CinemachineVirtualCamera>();
+            virtualCamera = GetComponent<Unity.Cinemachine.CinemachineCamera>();
 
         virtualCamera.enabled = false;
         Debug.Log("[PlayCutscene] Registered with interactionType = " + interactionType);
